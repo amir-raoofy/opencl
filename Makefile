@@ -1,13 +1,13 @@
 .PHONY: clean
-CXX = g++
+CXX = gcc
 CXXFLAGS = -g -Wall -std=c++11
 
 INC = -I/sccs/nvd/OpenCL/include/ -I.
-LIB = -L/sccs/nvd/ocl-icd/2.2.9/lib/ -lOpenCL
+LIB = -L/sccs/nvd/ocl-icd/2.2.9/lib/ -lOpenCL -lm
 
 all: test
 
-%.o: %.cpp
+%.o: %.c
 	$(CXX) $(CFLAGS) $(INC) $(LIB) -c -o $@ $<
 
 test: test.o
