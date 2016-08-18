@@ -16,5 +16,4 @@ module load cuda
 module load gcc
 
 # mpiexec.hydra -genv OMP_NUM_THREADS 2 -ppn 8 -n 16 deviceQuery
-module list
-./clpeak
+./test
